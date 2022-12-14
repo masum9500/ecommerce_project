@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\SliderController;
 
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\LanguageController;
+use App\Http\Controllers\Frontend\CartController;
 
 
 /*
@@ -181,4 +182,27 @@ Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDeta
 
 
 
+Route::get('/product/tag/{tag}', [IndexController::class, 'TagwiseProduct'])->name('product-tag');
 
+
+
+Route::get('product/sub_cat/{subcat_id}/{slug}', [IndexController::class, 'SubcatProduct']);
+Route::get('product/Sub_sub_cat/{subsubcat_id}/{slug}', [IndexController::class, 'SubSubcatProduct']);
+
+
+
+// Product View Modal with Ajax
+Route::get('/product/view/modal/{id}', [IndexController::class, 'ProductViewAjax']);
+
+
+
+// Add to Cart Store Data
+Route::post('/cart/data/store/{id}', [CartController::class, 'AddToCart']);
+
+
+// Get Data from mini cart
+Route::get('/product/mini/cart/', [CartController::class, 'AddMiniCart']);
+
+
+// Remove mini cart
+Route::get('/minicart/product-remove/{rowId}', [CartController::class, 'RemoveMiniCart']);
