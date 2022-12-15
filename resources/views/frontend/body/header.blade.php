@@ -9,8 +9,8 @@
             <li><a href="#"><i class="icon fa fa-user"></i>
 @if(session()->get('language') == 'bangla') আমার একাউন্ট @else My Account @endif
             </a></li>
-            <li><a href="#"><i class="icon fa fa-heart"></i>Wishlist</a></li>
-            <li><a href="#"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
+            <li><a href="{{ route('wishlist') }}"><i class="icon fa fa-heart"></i>Wishlist</a></li>
+            <li><a href="{{ route('mycart') }}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
             <li><a href="#"><i class="icon fa fa-check"></i>Checkout</a></li>
 
             @auth
@@ -88,7 +88,7 @@
             </form>
           </div>
           <!-- /.search-area --> 
-          <!-- ============================================================= SEARCH AREA : END ============================================================= --> </div>
+          <!-- == SEARCH AREA : END ==== --> </div>
         <!-- /.top-search-holder -->
         
         <div class="col-xs-12 col-sm-12 col-md-2 animate-dropdown top-cart-row"> 
