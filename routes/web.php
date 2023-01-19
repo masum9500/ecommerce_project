@@ -269,11 +269,8 @@ Route::get('/division/delete/{id}', [ShippingAreaController::class, 'DivisionDel
 Route::get('/district/view', [ShippingAreaController::class, 'DistrictView'])->name('manage-district');
 
 Route::post('/district/store', [ShippingAreaController::class, 'DistrictStore'])->name('district.store');
-
 Route::get('/district/edit/{id}', [ShippingAreaController::class, 'DistrictEdit'])->name('district.edit');
-
 Route::post('/district/update/{id}', [ShippingAreaController::class, 'DistrictUpdate'])->name('district.update');
-
 Route::get('/district/delete/{id}', [ShippingAreaController::class, 'DistrictDelete'])->name('district.delete');
 
 
@@ -281,16 +278,19 @@ Route::get('/district/delete/{id}', [ShippingAreaController::class, 'DistrictDel
 
 // Ship State 
 Route::get('/state/view', [ShippingAreaController::class, 'StateView'])->name('manage-state');
-
 Route::post('/state/store', [ShippingAreaController::class, 'StateStore'])->name('state.store');
-
 Route::get('/state/edit/{id}', [ShippingAreaController::class, 'StateEdit'])->name('state.edit');
-
 Route::post('/state/update/{id}', [ShippingAreaController::class, 'StateUpdate'])->name('state.update');
-
 Route::get('/state/delete/{id}', [ShippingAreaController::class, 'StateDelete'])->name('state.delete');
 
-
-
 });
+
+
+
+// Frontend Coupon Option
+
+Route::post('/coupon-apply', [CartController::class, 'CouponApply']);
+Route::get('/coupon-calculation', [CartController::class, 'CouponCalculation']);
+Route::get('/coupon-remove', [CartController::class, 'CouponRemove']);
+
 
