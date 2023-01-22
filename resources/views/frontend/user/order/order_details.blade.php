@@ -215,19 +215,9 @@ $file = App\Models\Product::where('id',$item->product_id)->first();
               @endif
 
 
-                </td>
-
-
-
-
-                
+                </td>   
               </tr>
               @endforeach
-
-
-
-
-
             </tbody>
             
           </table>
@@ -269,16 +259,12 @@ $file = App\Models\Product::where('id',$item->product_id)->first();
 
 
   @endif
-<br><br>
-
-
-		 
+<br><br>	 
 			
 		</div> <!-- // end row -->
 		
 	</div>
 	
 </div>
- 
 
 @endsection
