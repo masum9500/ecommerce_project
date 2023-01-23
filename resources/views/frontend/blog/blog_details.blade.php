@@ -10,7 +10,9 @@
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
 				<li><a href="#">Home</a></li>
-				<li class='active'>{{ $blogpost->post_title_en }}</li>
+				<li class='active'>
+					@if(session()->get('language') == 'bangla') {{ $blogpost->post_title_ban }} @else {{ $blogpost->post_title_en }} @endif
+				</li>
 			</ul>
 		</div><!-- /.breadcrumb-inner -->
 	</div><!-- /.container -->
@@ -25,11 +27,11 @@
 	<img class="img-responsive" src="{{ asset($blogpost->post_image) }}" alt="">
 
 
-	<h1>@if(session()->get('language') == 'hindi') {{ $blogpost->post_title_hin }} @else {{ $blogpost->post_title_en }} @endif</h1>
+	<h1>@if(session()->get('language') == 'bangla') {{ $blogpost->post_title_ban }} @else {{ $blogpost->post_title_en }} @endif</h1>
 
 	<span class="date-time">{{ Carbon\Carbon::parse($blogpost->created_at)->diffForHumans()  }}</span>
 
-	<p> @if(session()->get('language') == 'hindi') {!!  $blogpost->post_details_hin  !!} @else {!!  $blogpost->post_details_en  !!} @endif
+	<p> @if(session()->get('language') == 'bangla') {!!  $blogpost->post_details_ban  !!} @else {!!  $blogpost->post_details_en  !!} @endif
 	</p>
 
 	<div class="social-media">
