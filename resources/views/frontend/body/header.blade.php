@@ -64,7 +64,7 @@
          $setting = App\Models\SiteSetting::find(1);
           @endphp
 
-          <div class="logo"> <a href="{{ url('/') }}"> <img src="{{ $setting->logo }}" alt="logo"> </a> </div>
+          <div class="logo"> <a href="{{ url('/') }}"> <img src="{{ asset($setting->logo) }}" alt="logo"> </a> </div>
          </div>
         <!-- /.logo-holder -->
         
