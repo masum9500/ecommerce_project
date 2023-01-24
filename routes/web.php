@@ -449,3 +449,12 @@ Route::get('/delete/{id}', [ReviewController::class, 'DeleteReview'])->name('del
 
 
 
+Route::prefix('stock')->group(function(){
+
+Route::get('/product', [ProductController::class, 'ProductStock'])->name('product.stock');
+
+
+});
+
+
+
