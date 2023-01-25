@@ -480,4 +480,8 @@ Route::get('/delete/{id}', [AdminUserController::class, 'DeleteAdminRole'])->nam
 });
 
 
+// Advance Search Routes 
+Route::post('search-product', [IndexController::class, 'SearchProduct']);
+
+
 

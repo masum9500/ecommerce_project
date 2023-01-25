@@ -31,10 +31,20 @@
             <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
             <input type="email" name="email" class="form-control unicase-form-control text-input" id="email" >
         </div>
+        @error('email')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         <div class="form-group">
             <label class="info-title" for="exampleInputPassword1">Password <span>*</span></label>
             <input type="password" name="password" class="form-control unicase-form-control text-input" id="password" >
         </div>
+        @error('password')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         <div class="radio outer-xs">
             <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Remember me!
