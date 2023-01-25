@@ -11,7 +11,11 @@ use App\Models\Brand;
 use App\Models\Product;
 use App\Models\MultiImg;
 use App\Models\Slider;
+use App\Models\SubCategory;
+use App\Models\SubSubCategory;
 use App\Models\Blog\BlogPost;
+
+
 use Illuminate\Support\Facades\Hash;
 
 class IndexController extends Controller
@@ -143,14 +147,16 @@ class IndexController extends Controller
     public function SubcatProduct($subcat_id, $slug)
     {
          $products = Product::where('status',1)->where('subcategory_id',$subcat_id)->orderBy('id','DESC')->paginate(3);
-        return view('frontend.product.subcat_view',compact('products'));
+         $breadsubcat = SubCategory::with(['category'])->where('id',$subcat_id)->get();
+        return view('frontend.product.subcat_view',compact('products','breadsubcat'));
     }
 
 
     public function SubSubcatProduct($subsubcat_id, $slug)
     {
         $products = Product::where('status',1)->where('subsubcategory_id',$subsubcat_id)->orderBy('id','DESC')->paginate(3);
-        return view('frontend.product.subsubcat_view',compact('products'));
+        $breadsubsubcat = SubSubCategory::with(['category','subcategory'])->where('id',$subsubcat_id)->get();
+        return view('frontend.product.subsubcat_view',compact('products', 'breadsubsubcat'));
     }
 
 
