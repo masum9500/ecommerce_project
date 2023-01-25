@@ -248,6 +248,11 @@ Route::get('/cancel/orders', [AllUserController::class, 'CancelOrders'])->name('
 
 
 
+/// Order Traking Route 
+Route::post('/order/tracking', [AllUserController::class, 'OrderTraking'])->name('order.tracking');
+
+
+
 });
 
 
