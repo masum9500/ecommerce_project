@@ -251,6 +251,9 @@ Route::get('/cancel/orders', [AllUserController::class, 'CancelOrders'])->name('
 /// Order Traking Route 
 Route::post('/order/tracking', [AllUserController::class, 'OrderTraking'])->name('order.tracking');
 
+/// Product Search Route 
+Route::post('/search', [IndexController::class, 'ProductSearch'])->name('product.search');
+
 
 
 });
